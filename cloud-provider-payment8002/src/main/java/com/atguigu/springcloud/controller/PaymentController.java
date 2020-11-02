@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  * @author cry
- * @date 2020年11月02日 0:06
+ * @date 2020年11月02日 23:41
  * @description
  */
 @RestController
@@ -51,4 +51,3 @@ public class PaymentController {
     }
 
 }
-
