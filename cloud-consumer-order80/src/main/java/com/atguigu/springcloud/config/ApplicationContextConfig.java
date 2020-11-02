@@ -1,8 +1,11 @@
 package com.atguigu.springcloud.config;
 
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
+
+import java.time.Duration;
 
 /**
  * @author cry
@@ -14,6 +17,10 @@ public class ApplicationContextConfig {
 
     @Bean
     public RestTemplate getRestTemplate(){
-        return new RestTemplate();
+        RestTemplateBuilder builder = new RestTemplateBuilder();
+        return builder
+                .setConnectTimeout(Duration.ofSeconds(10))
+                .setReadTimeout(Duration.ofSeconds(10))
+                .build();
     }
 }
